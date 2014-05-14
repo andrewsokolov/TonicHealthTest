@@ -58,9 +58,6 @@ class RegistrationListener implements EventSubscriberInterface
             }
         }
 
-//        $this->em->persist($user);
-//        $this->em->flush();
-
         $this->user_manager->updateUser($user);
 
     }
