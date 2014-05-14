@@ -1,0 +1,31 @@
+Auth\AuthBundle\Entity\User:
+    type:  entity
+    table: fos_user
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        first_name:
+          type: string
+          length: 45
+        last_name:
+          type: string
+          length: 45
+        referal:
+          type: string
+          length: 6
+          nullable: true
+    manyToMany:
+        user_referals:
+          targetEntity: Auth\AuthBundle\Entity\UserReferal
+          inversedBy: users
+          joinTable:
+                  name: user_user_referal
+                  joinColumns:
+                    user_id:
+                      referencedColumnName: id
+                  inverseJoinColumns:
+                    user_referal_id:
+                      referencedColumnName: id

@@ -1,0 +1,4 @@
+{% for user in users %}
+ <a href="{{ url('referal_homepage', { (param) : user.referal }) }}">{{ user.email }}</a>
+ </br>
+{% endfor %}

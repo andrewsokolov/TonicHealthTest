@@ -1,0 +1,25 @@
+Auth\AuthBundle\Entity\UserReferal:
+    type:  entity
+    table: user_referal
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        referal:
+          type: string
+          length: 6
+        ip:
+          type: string
+          length: 16
+        referer:
+          type: string
+          length: 255
+          nullable: true
+        date:
+          type: datetime
+    manyToMany:
+            users:
+              targetEntity: Auth\AuthBundle\Entity\User
+              mappedBy: user_referals

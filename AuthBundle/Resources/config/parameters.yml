@@ -1,0 +1,3 @@
+parameters:
+    referal.param.name: referal
+    referal.cookie.name: referal_id
